@@ -1,0 +1,680 @@
+/* IMIC DECOR Design System - Premium Interior Design Company */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Extracted from IMIC logo */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Premium Gold from logo */
+    --primary: 42 65% 55%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 42 75% 65%;
+
+    /* Elegant secondary tones */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 42 45% 25%;
+    --accent-foreground: 42 65% 55%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 42 65% 55%;
+
+    --radius: 0.75rem;
+
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(42 65% 55%), hsl(42 75% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%), hsl(0 0% 14%));
+    
+    /* Elegant shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(42 65% 55% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(42 75% 65% / 0.4);
+    
+    /* Premium animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elastic: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply  text-foreground font-inter;
+    font-family: 'Inter', sans-serif;
+    /* Elegant background pattern */
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(42 75% 65% / 0.02) 0%, transparent 50%),
+      linear-gradient(45deg, hsl(0 0% 8%) 0%, hsl(0 0% 10%) 100%);
+    background-size: 400px 400px, 300px 300px, 100% 100%;
+    background-position: 0 0, 200px 200px, 0 0;
+    background-repeat: repeat, repeat, no-repeat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-elegant hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-elegant;
+  }
+
+  /* Elegant Cards */
+  .card-elegant {
+    @apply bg-gradient-to-br from-card to-secondary rounded-xl shadow-soft border border-border/20 transition-all duration-300 hover:shadow-elegant hover:scale-105;
+  }
+
+  /* Background Pattern Classes - Simple & Elegant */
+  .bg-pattern-diagonal-lines {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        hsl(42 65% 55% / 0.08) 40px,
+        hsl(42 65% 55% / 0.08) 42px
+      );
+  }
+
+  .bg-pattern-diagonal-lines-reverse {
+    background-image: 
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        hsl(42 65% 55% / 0.08) 40px,
+        hsl(42 65% 55% / 0.08) 42px
+      );
+  }
+
+  .bg-pattern-diagonal-lines-thick {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 60px,
+        hsl(42 65% 55% / 0.1) 60px,
+        hsl(42 65% 55% / 0.1) 65px
+      );
+  }
+
+  .bg-pattern-diagonal-lines-thin {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        hsl(42 65% 55% / 0.06) 30px,
+        hsl(42 65% 55% / 0.06) 32px
+      );
+  }
+
+  .bg-pattern-random-lines {
+    background-image: 
+      linear-gradient(30deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px),
+      linear-gradient(60deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px),
+      linear-gradient(120deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px);
+    background-size: 100px 100px, 80px 80px, 120px 120px;
+    background-position: 0 0, 40px 40px, 60px 60px;
+  }
+
+  .bg-pattern-crossed-lines {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.06) 1px, transparent 1px),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-pattern-zigzag {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.08) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.08) 25%, transparent 25%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+  }
+
+  .bg-pattern-slanted-lines {
+    background-image: 
+      repeating-linear-gradient(
+        30deg,
+        transparent,
+        transparent 50px,
+        hsl(42 65% 55% / 0.07) 50px,
+        hsl(42 65% 55% / 0.07) 52px
+      );
+  }
+
+  .bg-pattern-slanted-lines-reverse {
+    background-image: 
+      repeating-linear-gradient(
+        -30deg,
+        transparent,
+        transparent 50px,
+        hsl(42 65% 55% / 0.07) 50px,
+        hsl(42 65% 55% / 0.07) 52px
+      );
+  }
+
+  .bg-pattern-minimal-lines {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .bg-pattern-minimal-lines-reverse {
+    background-image: 
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .bg-pattern-subtle-lines {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 100px,
+        hsl(42 65% 55% / 0.03) 100px,
+        hsl(42 65% 55% / 0.03) 102px
+      );
+  }
+
+  .bg-pattern-subtle-lines-reverse {
+    background-image: 
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 100px,
+        hsl(42 65% 55% / 0.03) 100px,
+        hsl(42 65% 55% / 0.03) 102px
+      );
+  }
+
+  /* Keep the original patterns for backward compatibility but make them simpler */
+  .bg-pattern-dots {
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(42 65% 55% / 0.08) 1px, transparent 0);
+    background-size: 25px 25px;
+  }
+
+  .bg-pattern-grid {
+    background-image: 
+      linear-gradient(hsl(42 65% 55% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-pattern-waves {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        hsl(42 65% 55% / 0.04) 20px,
+        hsl(42 65% 55% / 0.04) 22px
+      );
+  }
+
+  .bg-pattern-circles {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.06) 0%, transparent 50%);
+    background-size: 120px 120px;
+  }
+
+  .bg-pattern-luxury {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+  }
+
+  .bg-pattern-mesh {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 1px, transparent 1px),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .bg-pattern-elegant {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+  }
+
+  .bg-pattern-stars {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(42 65% 55% / 0.1), transparent),
+      radial-gradient(2px 2px at 60px 70px, hsl(42 65% 55% / 0.1), transparent);
+    background-size: 100px 100px;
+  }
+
+  .bg-pattern-hexagons {
+    background-image: 
+      linear-gradient(60deg, hsl(42 65% 55% / 0.04) 25%, transparent 25.5%, transparent 75%, hsl(42 65% 55% / 0.04) 75%, hsl(42 65% 55% / 0.04));
+    background-size: 80px 80px;
+  }
+
+  .bg-pattern-diamonds {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+  }
+
+  .bg-pattern-triangles {
+    background-image: 
+      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+  }
+
+  .bg-pattern-noise {
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(42 65% 55% / 0.05) 1px, transparent 0);
+    background-size: 6px 6px;
+  }
+
+  .bg-pattern-glow {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(42 65% 55% / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(42 65% 55% / 0.06) 0%, transparent 50%);
+    background-size: 300px 300px, 200px 200px;
+    background-position: 0 0, 100px 100px;
+  }
+
+  .bg-pattern-minimal {
+    background-image: 
+      linear-gradient(90deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px),
+      linear-gradient(0deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
+    background-size: 120px 120px;
+  }
+
+  .bg-pattern-organic {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(42 65% 55% / 0.04) 0%, transparent 50%);
+    background-size: 150px 150px, 100px 100px;
+    background-position: 0 0, 75px 75px;
+  }
+
+
+
+  /* Premium Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.8s ease-out forwards;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .rotate-in {
+    animation: rotateIn 0.8s ease-out forwards;
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Carousel enhancements */
+  .embla {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .embla__slide {
+    position: relative;
+    min-width: 0;
+    flex-shrink: 0;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    font-family: 'Playfair Display', 'Amiri', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-elastic {
+    transition: var(--transition-elastic);
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-200deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(42 65% 55%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(42 75% 65%);
+}
+
+/* Selection styles */
+::selection {
+  background: hsl(42 65% 55%);
+  color: hsl(0 0% 8%);
+}
+
+::-moz-selection {
+  background: hsl(42 65% 55%);
+  color: hsl(0 0% 8%);
+}

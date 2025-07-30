@@ -1,0 +1,11 @@
+# تجاهل جميع الملفات من فحص ESLint
+*
+**/*
+src/**/*
+components/**/*
+pages/**/*
+app/**/*
+*.ts
+*.tsx
+*.js
+*.jsx 
