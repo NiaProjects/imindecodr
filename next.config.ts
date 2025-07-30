@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
     // تجاهل جميع أخطاء TypeScript أثناء البناء
     ignoreBuildErrors: true,
   },
-  // لإنشاء نسخة ثابتة
-  output: "export",
-  trailingSlash: true,
+
   // تجاهل تحذيرات الصور
   images: {
     unoptimized: true,

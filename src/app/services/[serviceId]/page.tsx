@@ -8,6 +8,8 @@ interface ServicePageProps {
   };
 }
 
+
+
 export default function ServicePage({ params }: ServicePageProps) {
   return (
     <div className="min-h-screen bg-background">

@@ -10,6 +10,8 @@ interface NewsPageProps {
   };
 }
 
+
+
 // Generate metadata for SEO
 export async function generateMetadata({
   params,

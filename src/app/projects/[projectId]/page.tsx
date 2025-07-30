@@ -30,6 +30,8 @@ interface ProjectDetailPageProps {
   };
 }
 
+
+
 const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
   const router = useRouter();

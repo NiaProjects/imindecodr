@@ -283,7 +283,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground font-medium">
+                    <p className="text-foreground font-bold">
                     kmali@imicegypt.com
                     </p>
                   </div>
