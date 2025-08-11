@@ -124,7 +124,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">+966 12 345 6789</span>
+                <span className="text-muted-foreground">01208777757</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
@@ -135,7 +135,8 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  Riyadh, Saudi Arabia
+                East hub floor 2 مدخل 1 فوق كاريبو مدينتي القاهرة الجديده
+
                 </span>
               </li>
             </ul>
