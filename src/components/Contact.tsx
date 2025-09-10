@@ -86,10 +86,7 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 lg:py-32 bg-pattern-slanted-lines-reverse"
-    >
+    <section id="contact" className="py-4 lg:py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
@@ -271,9 +268,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="text-foreground font-medium">
-                    01208777757
-                    </p>
+                    <p className="text-foreground font-medium">01208777757</p>
                   </div>
                 </div>
 
@@ -284,7 +279,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <p className="text-foreground font-bold">
-                    kmali@imicegypt.com
+                      kmali@imicegypt.com
                     </p>
                   </div>
                 </div>
@@ -296,10 +291,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
                     <p className="text-foreground font-medium">
-                    East hub floor 2
-مدخل 1
-فوق كاريبو 
-مدينتي القاهرة الجديده
+                      East hub floor 2 مدخل 1 فوق كاريبو مدينتي القاهرة الجديده
                     </p>
                   </div>
                 </div>
@@ -312,7 +304,12 @@ const Contact = () => {
                 Our Location
               </h3>
               <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3452.71077424365!2d31.673624984884142!3d30.07382388187163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDA0JzI1LjgiTiAzMcKwNDAnMTcuMiJF!5e0!3m2!1sar!2seg!4v1753886655635!5m2!1sar!2seg" className="w-full h-full rounded-lg"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3452.71077424365!2d31.673624984884142!3d30.07382388187163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDA0JzI1LjgiTiAzMcKwNDAnMTcuMiJF!5e0!3m2!1sar!2seg!4v1753886655635!5m2!1sar!2seg"
+                  className="w-full h-full rounded-lg"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>

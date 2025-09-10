@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import {
   ArrowLeft,
   ExternalLink,
@@ -20,21 +20,21 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { projectsApi, ProjectData, ApiResponse } from "@/lib/api";
+import { projectsApi, ProjectData, ApiResponse, EngineerData } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import useEmblaCarousel from "embla-carousel-react";
+import NewsBar from "@/components/NewsBar";
 
 interface ProjectDetailPageProps {
-  params: {
+  params: Promise<{
     projectId: string;
-  };
+  }>;
 }
-
-
 
 const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
   const router = useRouter();
+  const resolvedParams = use(params);
   const [project, setProject] = useState<ProjectData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -56,7 +56,9 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
         setLoading(true);
         setError(null);
 
-        const result = await projectsApi.getById(parseInt(params.projectId));
+        const result = await projectsApi.getById(
+          parseInt(resolvedParams.projectId)
+        );
         setProject(result.data);
       } catch (err) {
         console.error("Error fetching project:", err);
@@ -68,10 +70,10 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
       }
     };
 
-    if (params.projectId) {
+    if (resolvedParams.projectId) {
       fetchProject();
     }
-  }, [params.projectId]);
+  }, [resolvedParams.projectId]);
 
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
@@ -114,13 +116,20 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   }
 
   const projectTitle = language === "ar" ? project.title_ar : project.title_en;
-  const categoryName =
-    language === "ar" ? project.category.name_ar : project.category.name_en;
-  const categoryDesc =
-    language === "ar" ? project.category.desc_ar : project.category.desc_en;
+  const categoryName = project.category
+    ? language === "ar"
+      ? project.category.name_ar
+      : project.category.name_en
+    : "Unknown Category";
+  const categoryDesc = project.category
+    ? language === "ar"
+      ? project.category.desc_ar
+      : project.category.desc_en
+    : "No description available";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <NewsBar />
       {/* Hero Section with Cover Image */}
       <div className="relative h-[70vh] min-h-[500px] overflow-hidden">
         {/* Background Image */}
@@ -385,6 +394,22 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
                     {project.images?.length || 0}
                   </span>
                 </div>
+                {project.engineer && (
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
+                    <span className="text-sm text-muted-foreground">
+                      Engineer
+                    </span>
+                    <button
+                      onClick={() =>
+                        project.engineer &&
+                        router.push(`/engineers/${project.engineer.id}`)
+                      }
+                      className="font-semibold text-primary hover:text-primary/80 transition-colors duration-200 hover:underline"
+                    >
+                      {project.engineer.name}
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -407,8 +432,6 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
                 </div>
               </div>
             )}
-
-    
 
             {/* Quick Contact */}
             <div className="bg-card rounded-2xl p-6 border border-border/20 shadow-lg">

@@ -56,7 +56,7 @@ const About = () => {
   // Loading state
   if (loading) {
     return (
-      <section id="about" className="py-20 lg:py-32 bg-pattern-minimal-lines">
+      <section id="about" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <Loader2 className="h-6 w-6 animate-spin" />
@@ -70,7 +70,7 @@ const About = () => {
   // Error state
   if (error || !aboutData) {
     return (
-      <section id="about" className="py-20 lg:py-32 bg-pattern-minimal-lines">
+      <section id="about" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-md mx-auto text-center">
             <p className="text-destructive font-medium">
@@ -96,7 +96,7 @@ const About = () => {
     language === "ar" ? aboutData.mission_ar : aboutData.mission_en;
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-pattern-minimal-lines">
+    <section id="about" className="py-4 lg:py-10 bg-pattern-minimal-lines">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}

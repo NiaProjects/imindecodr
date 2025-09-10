@@ -45,7 +45,7 @@ const News = () => {
 
   if (loading) {
     return (
-      <section id="news" className="py-20 lg:py-32 bg-pattern-subtle-lines">
+      <section id="news" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
@@ -58,7 +58,7 @@ const News = () => {
 
   if (error) {
     return (
-      <section id="news" className="py-20 lg:py-32 bg-pattern-subtle-lines">
+      <section id="news" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-red-600 mb-4">{error}</p>
@@ -70,7 +70,7 @@ const News = () => {
   }
 
   return (
-    <section id="news" className="py-20 lg:py-32 bg-pattern-subtle-lines">
+    <section id="news" className="py-4 lg:py-10 bg-pattern-subtle-lines">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">

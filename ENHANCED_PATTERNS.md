@@ -134,10 +134,10 @@ className="bg-pattern-golden-noise"
 
 ```tsx
 // مثال: تطبيق النمط الذهبي على قسم الخدمات
-<section className="py-20 lg:py-32 bg-pattern-golden-dots">
+<section className="py-4 lg:py-10 bg-pattern-golden-dots">
 
 // مثال: تطبيق النمط الذهبي على قسم المشاريع
-<section className="py-20 lg:py-32 bg-pattern-golden-stars">
+<section className="py-4 lg:py-10 bg-pattern-golden-stars">
 
 // مثال: تطبيق النمط الذهبي على الهيدر
 <header className="bg-pattern-golden-noise/95 backdrop-blur-md">

@@ -151,7 +151,7 @@ const NewsDetail = ({ newsId }: NewsDetailProps) => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-dark overflow-hidden">
+      <section className="relative py-4 lg:py-10 bg-gradient-dark overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
@@ -240,7 +240,7 @@ const NewsDetail = ({ newsId }: NewsDetailProps) => {
       </section>
 
       {/* Article Content */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section className="py-4 lg:py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div
@@ -258,7 +258,7 @@ const NewsDetail = ({ newsId }: NewsDetailProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-dark">
+      <section className="py-4 lg:py-10 bg-gradient-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 fade-in-up">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground">

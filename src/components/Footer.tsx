@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -9,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-pattern-diagonal-lines-thick border-t border-border/20">
+    <footer className="border-t border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -49,12 +50,12 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#home"
+                <Link
+                  href="/"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {t("nav.home")}
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -65,20 +66,28 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#about"
+                <Link
+                  href="/about"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {t("nav.about")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/projects"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {t("nav.projects")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {t("nav.contact")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -135,8 +144,7 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">
-                East hub floor 2 مدخل 1 فوق كاريبو مدينتي القاهرة الجديده
-
+                  East hub floor 2 مدخل 1 فوق كاريبو مدينتي القاهرة الجديده
                 </span>
               </li>
             </ul>

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { projectsApi, ProjectData } from "@/lib/api";
 import { useRouter } from "next/navigation";
 
-const OurProjects = () => {
+const AllProjects = () => {
   const { t, isRTL, language } = useLanguage();
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("all");
@@ -78,19 +78,16 @@ const OurProjects = () => {
           (project) => project.category_id.toString() === activeCategory
         );
 
-  // Limit to 3 projects for homepage display
-  const displayedProjects = filteredProjects.slice(0, 3);
-
   // Loading state
   if (loading) {
     return (
-      <section id="projects" className="py-4 lg:py-10">
+      <section className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6">
               {t("projects.title")}
-            </h2>
+            </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               {t("projects.subtitle")}
             </p>
@@ -98,7 +95,7 @@ const OurProjects = () => {
 
           <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <Loader2 className="h-6 w-6 animate-spin" />
-            <span>Loading projects...</span>
+            <span>{t("button.loadingProjects")}</span>
           </div>
         </div>
       </section>
@@ -108,13 +105,13 @@ const OurProjects = () => {
   // Error state
   if (error) {
     return (
-      <section id="projects" className="py-4 lg:py-10">
+      <section className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6">
               {t("projects.title")}
-            </h2>
+            </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               {t("projects.subtitle")}
             </p>
@@ -122,7 +119,7 @@ const OurProjects = () => {
 
           <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-md mx-auto text-center">
             <p className="text-destructive font-medium">
-              Error loading projects
+              {t("button.errorLoading")}
             </p>
             <p className="text-sm text-muted-foreground mt-2">{error}</p>
             <Button
@@ -130,7 +127,7 @@ const OurProjects = () => {
               className="mt-4"
               variant="outline"
             >
-              Try Again
+              {t("button.tryAgain")}
             </Button>
           </div>
         </div>
@@ -139,13 +136,13 @@ const OurProjects = () => {
   }
 
   return (
-    <section id="projects" className="py-4 lg:py-10 bg-pattern-random-lines">
+    <section className="py-4 lg:py-10 bg-pattern-random-lines">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6 fade-in-up">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6 fade-in-up">
             {t("projects.title")}
-          </h2>
+          </h1>
           <p
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto fade-in-up"
             style={{ animationDelay: "0.2s" }}
@@ -176,7 +173,7 @@ const OurProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {displayedProjects.map((project) => {
+          {filteredProjects.map((project) => {
             const projectTitle =
               language === "ar" ? project.title_ar : project.title_en;
             const categoryName = project.category
@@ -220,7 +217,7 @@ const OurProjects = () => {
                       <ExternalLink
                         className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`}
                       />
-                      View Project
+                      {t("button.viewProject")}
                     </Button>
                   </div>
                 </div>
@@ -241,7 +238,7 @@ const OurProjects = () => {
                       router.push(`/projects/${project.id}`);
                     }}
                   >
-                    Learn More
+                    {t("button.learnMore")}
                     <ArrowRight
                       className={`h-4 w-4 ${
                         isRTL
@@ -256,25 +253,17 @@ const OurProjects = () => {
           })}
         </div>
 
-        {/* CTA */}
-        <div
-          className="text-center mt-16 fade-in-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <Button
-            size="lg"
-            className="btn-primary"
-            onClick={() => router.push("/projects")}
-          >
-            {t("projects.viewMore")}
-            <ArrowRight
-              className={`h-5 w-5 ${isRTL ? "mr-2 rotate-180" : "ml-2"}`}
-            />
-          </Button>
-        </div>
+        {/* Show message if no projects found */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              {t("button.noProjectsFound")}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default OurProjects;
+export default AllProjects;

@@ -1,5 +1,6 @@
 import NewsDetail from "@/components/NewsDetail";
 import Header from "@/components/Header";
+import NewsBar from "@/components/NewsBar";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import { newsApi } from "@/lib/api";
@@ -9,8 +10,6 @@ interface NewsPageProps {
     newsId: string;
   };
 }
-
-
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -73,6 +72,7 @@ export async function generateMetadata({
 export default function NewsPage({ params }: NewsPageProps) {
   return (
     <div className="min-h-screen bg-background">
+      <NewsBar />
       <Header />
       <main>
         <NewsDetail newsId={params.newsId} />

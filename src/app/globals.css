@@ -108,16 +108,12 @@
   }
 
   body {
-    @apply  text-foreground font-inter;
+    @apply text-foreground font-inter;
     font-family: 'Inter', sans-serif;
-    /* Elegant background pattern */
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.02) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(42 75% 65% / 0.015) 0%, transparent 50%),
-      linear-gradient(45deg, hsl(0 0% 20%) 0%, hsl(0 0% 25%) 100%);
-    background-size: 400px 400px, 300px 300px, 100% 100%;
-    background-position: 0 0, 200px 200px, 0 0;
-    background-repeat: repeat, repeat, no-repeat;
+    /* Fixed gradient background */
+    background: linear-gradient(180deg, #0d0719 0%, #5f3a20 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -140,243 +136,14 @@
     @apply bg-gradient-to-br from-card to-secondary rounded-xl shadow-soft border border-border/20 transition-all duration-300 hover:shadow-elegant hover:scale-105;
   }
 
-  /* Background Pattern Classes - Simple & Elegant */
-  .bg-pattern-diagonal-lines {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 40px,
-        hsl(42 65% 55% / 0.08) 40px,
-        hsl(42 65% 55% / 0.08) 42px
-      );
+  /* Background patterns removed - using fixed gradient instead */
+  
+  /* Fixed gradient background class */
+  /* .bg-gradient-fixed {
+    background: linear-gradient(180deg, #0d0719 0%, #a35c2d 100%);
+    background-attachment: fixed;
   }
-
-  .bg-pattern-diagonal-lines-reverse {
-    background-image: 
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 40px,
-        hsl(42 65% 55% / 0.08) 40px,
-        hsl(42 65% 55% / 0.08) 42px
-      );
-  }
-
-  .bg-pattern-diagonal-lines-thick {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 60px,
-        hsl(42 65% 55% / 0.1) 60px,
-        hsl(42 65% 55% / 0.1) 65px
-      );
-  }
-
-  .bg-pattern-diagonal-lines-thin {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 30px,
-        hsl(42 65% 55% / 0.06) 30px,
-        hsl(42 65% 55% / 0.06) 32px
-      );
-  }
-
-  .bg-pattern-random-lines {
-    background-image: 
-      linear-gradient(30deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px),
-      linear-gradient(60deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px),
-      linear-gradient(120deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px);
-    background-size: 100px 100px, 80px 80px, 120px 120px;
-    background-position: 0 0, 40px 40px, 60px 60px;
-  }
-
-  .bg-pattern-crossed-lines {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.06) 1px, transparent 1px),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.06) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .bg-pattern-zigzag {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.08) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.08) 25%, transparent 25%);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
-  }
-
-  .bg-pattern-slanted-lines {
-    background-image: 
-      repeating-linear-gradient(
-        30deg,
-        transparent,
-        transparent 50px,
-        hsl(42 65% 55% / 0.07) 50px,
-        hsl(42 65% 55% / 0.07) 52px
-      );
-  }
-
-  .bg-pattern-slanted-lines-reverse {
-    background-image: 
-      repeating-linear-gradient(
-        -30deg,
-        transparent,
-        transparent 50px,
-        hsl(42 65% 55% / 0.07) 50px,
-        hsl(42 65% 55% / 0.07) 52px
-      );
-  }
-
-  .bg-pattern-minimal-lines {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  .bg-pattern-minimal-lines-reverse {
-    background-image: 
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  .bg-pattern-subtle-lines {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 100px,
-        hsl(42 65% 55% / 0.03) 100px,
-        hsl(42 65% 55% / 0.03) 102px
-      );
-  }
-
-  .bg-pattern-subtle-lines-reverse {
-    background-image: 
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 100px,
-        hsl(42 65% 55% / 0.03) 100px,
-        hsl(42 65% 55% / 0.03) 102px
-      );
-  }
-
-  /* Keep the original patterns for backward compatibility but make them simpler */
-  .bg-pattern-dots {
-    background-image: 
-      radial-gradient(circle at 1px 1px, hsl(42 65% 55% / 0.08) 1px, transparent 0);
-    background-size: 25px 25px;
-  }
-
-  .bg-pattern-grid {
-    background-image: 
-      linear-gradient(hsl(42 65% 55% / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(42 65% 55% / 0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .bg-pattern-waves {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        hsl(42 65% 55% / 0.04) 20px,
-        hsl(42 65% 55% / 0.04) 22px
-      );
-  }
-
-  .bg-pattern-circles {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.06) 0%, transparent 50%);
-    background-size: 120px 120px;
-  }
-
-  .bg-pattern-luxury {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%);
-    background-size: 100px 100px;
-    background-position: 0 0, 50px 50px;
-  }
-
-  .bg-pattern-mesh {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 1px, transparent 1px),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  .bg-pattern-elegant {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%);
-    background-size: 80px 80px;
-    background-position: 0 0, 40px 40px;
-  }
-
-  .bg-pattern-stars {
-    background-image: 
-      radial-gradient(2px 2px at 20px 30px, hsl(42 65% 55% / 0.1), transparent),
-      radial-gradient(2px 2px at 60px 70px, hsl(42 65% 55% / 0.1), transparent);
-    background-size: 100px 100px;
-  }
-
-  .bg-pattern-hexagons {
-    background-image: 
-      linear-gradient(60deg, hsl(42 65% 55% / 0.04) 25%, transparent 25.5%, transparent 75%, hsl(42 65% 55% / 0.04) 75%, hsl(42 65% 55% / 0.04));
-    background-size: 80px 80px;
-  }
-
-  .bg-pattern-diamonds {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.04) 25%, transparent 25%);
-    background-size: 80px 80px;
-    background-position: 0 0, 40px 40px;
-  }
-
-  .bg-pattern-triangles {
-    background-image: 
-      linear-gradient(45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(42 65% 55% / 0.03) 25%, transparent 25%);
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
-  }
-
-  .bg-pattern-noise {
-    background-image: 
-      radial-gradient(circle at 1px 1px, hsl(42 65% 55% / 0.05) 1px, transparent 0);
-    background-size: 6px 6px;
-  }
-
-  .bg-pattern-glow {
-    background-image: 
-      radial-gradient(circle at 20% 80%, hsl(42 65% 55% / 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(42 65% 55% / 0.06) 0%, transparent 50%);
-    background-size: 300px 300px, 200px 200px;
-    background-position: 0 0, 100px 100px;
-  }
-
-  .bg-pattern-minimal {
-    background-image: 
-      linear-gradient(90deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px),
-      linear-gradient(0deg, hsl(42 65% 55% / 0.04) 1px, transparent 1px);
-    background-size: 120px 120px;
-  }
-
-  .bg-pattern-organic {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(42 65% 55% / 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(42 65% 55% / 0.04) 0%, transparent 50%);
-    background-size: 150px 150px, 100px 100px;
-    background-position: 0 0, 75px 75px;
-  }
-
+ */
 
 
   /* Premium Animations */
@@ -666,6 +433,24 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(42 75% 65%);
+}
+
+/* News Bar Scrolling Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
 /* Selection styles */

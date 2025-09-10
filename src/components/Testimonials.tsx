@@ -122,7 +122,7 @@ const Testimonials = () => {
     return (
       <section
         id="testimonials"
-        className="py-20 lg:py-32 bg-pattern-zigzag relative overflow-hidden"
+        className="py-4 lg:py-10 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
@@ -149,7 +149,7 @@ const Testimonials = () => {
     return (
       <section
         id="testimonials"
-        className="py-20 lg:py-32 bg-pattern-zigzag relative overflow-hidden"
+        className="py-4 lg:py-10 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
@@ -183,7 +183,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 lg:py-32 bg-pattern-zigzag relative overflow-hidden"
+      className="py-4 lg:py-10 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">

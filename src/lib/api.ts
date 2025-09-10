@@ -44,6 +44,15 @@ export interface ProjectCategory {
   updated_at: string;
 }
 
+export interface EngineerData {
+  id: number;
+  name: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
+  projects?: ProjectData[];
+}
+
 export interface ProjectData {
   id: number;
   category_id: number;
@@ -52,9 +61,12 @@ export interface ProjectData {
   title_ar: string;
   title_en: string;
   video: string;
+  done_at: string | null;
   created_at: string;
   updated_at: string;
-  category: ProjectCategory;
+  engineer_id: number;
+  category?: ProjectCategory;
+  engineer?: EngineerData;
 }
 
 export interface AboutData {
@@ -86,6 +98,13 @@ export interface ContactFormData {
   msg: string;
   location: string;
   type_unit: string;
+}
+
+export interface AppointmentFormData {
+  name: string;
+  phone: string;
+  date: string; // Format: 2025-09-03
+  time: string; // Format: 14:30
 }
 
 export interface NewsData {
@@ -183,6 +202,14 @@ export const projectsApi = {
   },
 };
 
+// Engineers API functions
+export const engineersApi = {
+  // Get engineer by ID
+  getById: (id: number): Promise<ApiResponse<EngineerData>> => {
+    return fetchApi<ApiResponse<EngineerData>>(`/engineers/${id}`);
+  },
+};
+
 // About API functions
 export const aboutApi = {
   // Get about information
@@ -239,6 +266,64 @@ export const contactApi = {
       })
       .catch((error) => {
         console.error("Contact API Error:", error);
+        throw error;
+      });
+  },
+};
+
+// Appointments API functions
+export const appointmentsApi = {
+  // Submit appointment form
+  submit: (
+    data: AppointmentFormData
+  ): Promise<ApiResponse<{ message: string }>> => {
+    return fetch(`${API_BASE_URL}/appointments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((result) => {
+        if (!result.success) {
+          throw new Error("API request failed");
+        }
+        return result;
+      })
+      .catch((error) => {
+        console.error("Appointments API Error:", error);
+        throw error;
+      });
+  },
+};
+
+// Bars API
+export const barsApi = {
+  get: async (): Promise<{
+    status: boolean;
+    data: {
+      id: number;
+      text: string;
+      is_active: number;
+      created_at: string;
+      updated_at: string;
+    };
+  }> => {
+    return fetch(`${API_BASE_URL}/bars/1`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error("Bars API Error:", error);
         throw error;
       });
   },

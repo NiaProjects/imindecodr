@@ -127,7 +127,7 @@ className="bg-pattern-diamonds"
 
 ```tsx
 // مثال: تغيير نمط قسم الخدمات
-<section className="py-20 lg:py-32 bg-pattern-luxury">
+<section className="py-4 lg:py-10 bg-pattern-luxury">
 ```
 
 ### إضافة نمط جديد:

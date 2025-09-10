@@ -61,10 +61,7 @@ const WhyChooseUs = () => {
   // Loading state
   if (loading) {
     return (
-      <section
-        id="why-choose-us"
-        className="py-20 lg:py-32 bg-pattern-slanted-lines"
-      >
+      <section id="why-choose-us" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
@@ -88,10 +85,7 @@ const WhyChooseUs = () => {
   // Error state
   if (error) {
     return (
-      <section
-        id="why-choose-us"
-        className="py-20 lg:py-32 bg-pattern-slanted-lines"
-      >
+      <section id="why-choose-us" className="py-4 lg:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
@@ -124,7 +118,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="py-20 lg:py-32 bg-pattern-slanted-lines"
+      className="py-4 lg:py-10 bg-pattern-slanted-lines"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

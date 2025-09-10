@@ -55,10 +55,7 @@ const Services = () => {
   // Loading state
   if (loading) {
     return (
-      <section
-        id="services"
-        className="py-20 lg:py-32 bg-pattern-diagonal-lines-reverse relative overflow-hidden"
-      >
+      <section id="services" className="py-4 lg:py-10 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-2 mb-6">
@@ -85,10 +82,7 @@ const Services = () => {
   // Error state
   if (error) {
     return (
-      <section
-        id="services"
-        className="py-20 lg:py-32 bg-pattern-diagonal-lines-reverse relative overflow-hidden"
-      >
+      <section id="services" className="py-4 lg:py-10 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-2 mb-6">
@@ -124,7 +118,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-20 lg:py-32 bg-pattern-diagonal-lines-reverse relative overflow-hidden"
+      className="py-4 lg:py-10 bg-pattern-diagonal-lines-reverse relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">

@@ -106,10 +106,7 @@ const OurClients = () => {
   // Loading state
   if (loading) {
     return (
-      <section
-        id="clients"
-        className="py-20 lg:py-32 bg-pattern-crossed-lines relative overflow-hidden"
-      >
+      <section id="clients" className="py-4 lg:py-10 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
@@ -133,10 +130,7 @@ const OurClients = () => {
   // Error state
   if (error) {
     return (
-      <section
-        id="clients"
-        className="py-20 lg:py-32 bg-pattern-crossed-lines relative overflow-hidden"
-      >
+      <section id="clients" className="py-4 lg:py-10 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-16 lg:mb-20">
@@ -169,7 +163,7 @@ const OurClients = () => {
   return (
     <section
       id="clients"
-      className="py-20 lg:py-32 bg-pattern-crossed-lines relative overflow-hidden"
+      className="py-4 lg:py-10 bg-pattern-crossed-lines relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
