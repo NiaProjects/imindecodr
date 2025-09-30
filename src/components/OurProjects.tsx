@@ -188,7 +188,7 @@ const OurProjects = () => {
             return (
               <div
                 key={project.id}
-                className="card-elegant group cursor-pointer fade-in-up"
+                className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl group cursor-pointer fade-in-up"
                 style={{ animationDelay: `${0.1 * Math.random()}s` }}
                 onClick={() => router.push(`/projects/${project.id}`)}
               >
@@ -231,11 +231,11 @@ const OurProjects = () => {
                     {projectTitle}
                   </h3>
 
-                  <p className="text-muted-foreground mb-4">{categoryName}</p>
+                  <p className=" mb-4">{categoryName}</p>
 
                   <Button
                     variant="ghost"
-                    className="p-0 h-auto text-primary hover:text-primary-glow font-semibold group/btn"
+                    className="p-0 h-auto text-yellow-200 hover:text-primary-glow font-semibold group/btn"
                     onClick={(e) => {
                       e.stopPropagation();
                       router.push(`/projects/${project.id}`);

@@ -91,7 +91,7 @@ const News = () => {
             <Link
               key={news.id}
               href={`/news/${news.id}`}
-              className="card-elegant group cursor-pointer block fade-in-up"
+              className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl group cursor-pointer block fade-in-up"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
               {/* News Image */}
@@ -112,7 +112,7 @@ const News = () => {
               {/* News Content */}
               <div className="p-6 space-y-4">
                 {/* Meta Info */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 text-sm ">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     <span>{formatDate(news.created_at)}</span>
@@ -124,12 +124,12 @@ const News = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-playfair font-semibold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                <h3 className="text-xl md:text-2xl font-playfair font-semibold  group-hover:text-primary transition-colors duration-300 line-clamp-2">
                   {language === "ar" ? news.title_ar : news.title_en}
                 </h3>
 
                 {/* Summary - Extract first paragraph from body */}
-                <p className="text-muted-foreground leading-relaxed line-clamp-3">
+                <p className=" leading-relaxed line-clamp-3">
                   {(() => {
                     const body =
                       language === "ar" ? news.body_ar : news.body_en;

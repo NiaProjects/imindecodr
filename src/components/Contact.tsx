@@ -104,7 +104,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
           <div
-            className="card-elegant p-8 fade-in-up"
+            className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl p-8 fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
             {/* Success Message */}
@@ -129,14 +129,14 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium  mb-2">
                     {t("contact.name")}
                   </label>
                   <Input
                     type="text"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="w-full"
+                    className="w-full bg-black/50"
                     required
                     disabled={loading}
                   />
@@ -149,7 +149,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="w-full"
+                    className="w-full bg-black/50"
                     required
                     disabled={loading}
                   />
@@ -164,7 +164,7 @@ const Contact = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="w-full"
+                  className="w-full bg-black/50"
                   required
                   disabled={loading}
                 />
@@ -172,7 +172,7 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium  mb-2">
                     {t("contact.unitType")}
                   </label>
                   <Select
@@ -181,7 +181,7 @@ const Contact = () => {
                     }
                     disabled={loading}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-black/50">
                       <SelectValue placeholder={t("contact.unitType")} />
                     </SelectTrigger>
                     <SelectContent>
@@ -198,7 +198,7 @@ const Contact = () => {
                   </Select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium  mb-2">
                     {t("contact.unitLocation")}
                   </label>
                   <Input
@@ -207,20 +207,20 @@ const Contact = () => {
                     onChange={(e) =>
                       handleInputChange("unitLocation", e.target.value)
                     }
-                    className="w-full"
+                    className="w-full bg-black/50"
                     disabled={loading}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium  mb-2">
                   {t("contact.message")}
                 </label>
                 <Textarea
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="w-full h-32 resize-none"
+                  className="w-full h-32 resize-none bg-black/50"
                   required
                   disabled={loading}
                 />
@@ -229,7 +229,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="btn-primary w-full"
+                className="bg-yellow-200 hover:bg-yellow-300 text-black w-full"
                 disabled={loading}
               >
                 {loading ? (
@@ -257,23 +257,23 @@ const Contact = () => {
             style={{ animationDelay: "0.5s" }}
           >
             {/* Contact Details */}
-            <div className="card-elegant p-8">
+            <div className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl p-8">
               <h3 className="text-2xl font-playfair font-semibold text-foreground mb-6">
                 Contact Information
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black/50 rounded-lg flex items-center justify-center">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="text-sm ">Phone</p>
                     <p className="text-foreground font-medium">01208777757</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black/50 rounded-lg flex items-center justify-center">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -285,7 +285,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black/50 rounded-lg flex items-center justify-center">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -299,11 +299,11 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="card-elegant p-8">
+            <div className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl p-8">
               <h3 className="text-2xl font-playfair font-semibold text-foreground mb-6">
                 Our Location
               </h3>
-              <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
+              <div className="w-full h-64 bg-black/50 rounded-lg flex items-center justify-center">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3452.71077424365!2d31.673624984884142!3d30.07382388187163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDA0JzI1LjgiTiAzMcKwNDAnMTcuMiJF!5e0!3m2!1sar!2seg!4v1753886655635!5m2!1sar!2seg"
                   className="w-full h-full rounded-lg"

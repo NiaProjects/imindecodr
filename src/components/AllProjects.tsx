@@ -185,7 +185,7 @@ const AllProjects = () => {
             return (
               <div
                 key={project.id}
-                className="card-elegant group cursor-pointer fade-in-up"
+                className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl group cursor-pointer fade-in-up"
                 style={{ animationDelay: `${0.1 * Math.random()}s` }}
                 onClick={() => router.push(`/projects/${project.id}`)}
               >
@@ -208,7 +208,7 @@ const AllProjects = () => {
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Button
                       size="sm"
-                      className="bg-primary/90 hover:bg-primary text-primary-foreground backdrop-blur-sm"
+                      className="bg-yellow-200 hover:bg-yellow-300 text-black backdrop-blur-sm"
                       onClick={(e) => {
                         e.stopPropagation();
                         router.push(`/projects/${project.id}`);
@@ -228,11 +228,11 @@ const AllProjects = () => {
                     {projectTitle}
                   </h3>
 
-                  <p className="text-muted-foreground mb-4">{categoryName}</p>
+                  <p className=" mb-4">{categoryName}</p>
 
                   <Button
                     variant="ghost"
-                    className="p-0 h-auto text-primary hover:text-primary-glow font-semibold group/btn"
+                    className="p-0 h-auto text-yellow-200 hover:text-primary-glow font-semibold group/btn"
                     onClick={(e) => {
                       e.stopPropagation();
                       router.push(`/projects/${project.id}`);
@@ -256,7 +256,7 @@ const AllProjects = () => {
         {/* Show message if no projects found */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">
+            <p className=" text-lg">
               {t("button.noProjectsFound")}
             </p>
           </div>

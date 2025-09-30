@@ -164,7 +164,7 @@ const Services = () => {
             return (
               <div
                 key={service.id}
-                className="card-elegant p-8 group cursor-pointer fade-in-up hover-lift relative overflow-hidden"
+                className="bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl p-8 group cursor-pointer fade-in-up hover-lift relative overflow-hidden"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
                 {/* Background gradient overlay */}
@@ -201,7 +201,7 @@ const Services = () => {
                     {serviceName}
                   </h3>
 
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className=" leading-relaxed">
                     {serviceDesc}
                   </p>
                 </div>

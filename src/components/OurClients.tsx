@@ -180,7 +180,7 @@ const OurClients = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center  mb-16 lg:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-foreground mb-6 fade-in-up">
             {t("clients.title")}
           </h2>
@@ -236,9 +236,9 @@ const OurClients = () => {
                     <div className="group text-center transform transition-all duration-500 hover:scale-105">
                       {/* Client Logo Container */}
                       <div className="relative mb-6 overflow-hidden rounded-xl">
-                        <div className="aspect-[2/1] bg-gradient-to-br from-card to-secondary rounded-xl p-6 flex items-center justify-center border border-border/20 group-hover:border-primary/30 transition-all duration-500 group-hover:shadow-elegant relative overflow-hidden">
+                        <div className="aspect-[2/1] bg-gradient-to-t from-[#94763e] to-[#c0a460]  rounded-xl p-6 flex items-center justify-center border border-border/20 group-hover:border-primary/30 transition-all duration-500 group-hover:shadow-elegant relative overflow-hidden">
                           {/* Background gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="absolute inset-0bg-gradient-to-t from-[#94763e] to-[#c0a460] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                           {/* Logo */}
                           <img
