@@ -4,18 +4,20 @@ import NewsBar from "@/components/NewsBar";
 import Footer from "@/components/Footer";
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     serviceId: string;
-  };
+  }>;
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { serviceId } = await params;
+
   return (
     <div className="min-h-screen bg-background">
       <NewsBar />
       <Header />
       <main>
-        <ServiceDetail serviceId={params.serviceId} />
+        <ServiceDetail serviceId={serviceId} />
       </main>
       <Footer />
     </div>
